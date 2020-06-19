@@ -1,0 +1,86 @@
+---
+# More about metadata section
+title: "Learnr: and example"
+author: "D. Puthier"
+date: "`r date()`"
+output: learnr::tutorial
+runtime: shiny_prerendered
+# Do not index/display tutorial by setting `private: true`
+private: true
+toc: true
+description: >
+  This is a demo tutorial.
+---
+
+
+```{r, include=FALSE}
+# Starting an exercice
+# First you need to import the learnr package. If you don't, exercice snippets won't turn into nice javascript form. 
+# Also load *gradethis* to evaluate students outputs and set the exercice checker function to gradethis::grade_learnr.
+library(learnr)
+library(gradethis)
+tutorial_options(exercise.checker = gradethis::grade_learnr, exercise.completion = TRUE)
+```
+
+
+## Using shell as engine
+
+**Exercice:** go to /tmp directory and call pwd command.
+
+```{sh grade_sh, exercise.engine="sh", exercise=TRUE, exercise.cap = "Bash exo 1", exercise.diagnostics=TRUE}
+
+```
+
+```{sh grade_sh-solution}
+cd /tmp
+pwd
+```
+
+```{sh grade_sh-check}
+grade_code("Good job !!!!")
+```
+
+## Using R engine
+
+**Question:** Assign 10 to a variable named x and print(x)
+
+```{r r_exo_1,  exercise=TRUE, exercise.cap = "R exo 1"}
+
+```
+
+
+```{r r_exo_1-solution}
+x <- 10
+print(x)
+```
+
+```{r r_exo_1-check}
+grade_code("You are mastering R !")
+```
+
+## Using Python engine
+
+Concatenate "Hello" and " world" and print the result
+
+```{python python_exo_1,  exercise.engine="python", exercise=TRUE, exercise.cap = "R exo 1"}
+
+```
+
+
+```{python python_exo_1-solution}
+print("Hello" + " world")
+```
+
+```{python python_exo_1-check}
+grade_code("Astonishing !")
+```
+
+## Session info
+
+```{r}
+sessionInfo()
+```
+
+
+
+
