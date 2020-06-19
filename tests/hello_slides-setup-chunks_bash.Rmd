@@ -1,0 +1,65 @@
+---
+title: "Chained setup chunks with bash"
+author: "D. Puthier"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+
+```{r, include=FALSE}
+# Starting an exercice
+# First you need to import the learnr package. If you don't, exercice snippets won't turn into nice javascript form. 
+# Also load *gradethis* to evaluate students outputs and set the exercice checker function to gradethis::grade_learnr.
+library(learnr)
+library(gradethis)
+tutorial_options(exercise.checker = gradethis::grade_learnr, exercise.completion = TRUE)
+```
+
+## Using shell as engine
+
+### cd to /tmp
+
+**Exercice:** go to /tmp directory and call pwd command.
+
+
+```{sh exo_1, exercise.engine="sh", exercise=TRUE, exercise.cap = "Bash exo 1", exercise.diagnostics=TRUE, exercise.eval=FALSE}
+
+```
+
+<div id="filter-hint">
+**Hint:** Use the cd command !.
+</div>
+
+```{sh exo_1-solution}
+cd /tmp
+pwd
+```
+
+```{sh exo_1-check}
+grade_code("Good job !!!!")
+```
+
+
+### Print the previous working dir
+
+**Exercice:** Print pwd and ensure you are in /tmp.
+
+```{sh my_setup}
+cd /tmp
+```
+
+```{sh exo_2, exercise.engine="sh", exercise=TRUE, exercise.cap = "Bash exo 2", exercise.diagnostics=TRUE, exercise.eval=FALSE, exercice.setup="my_setup"}
+pwd
+```
+
+
+```{sh exo_2-solution}
+pwd
+```
+
+```{sh exo_2-check}
+grade_code("Good job !!!!")
+```
+
