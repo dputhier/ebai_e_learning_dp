@@ -46,7 +46,7 @@ cd /tmp
 pwd
 ```
 
-```{sh grade_sh-check}
+```{sh, grade_sh-check}
 grade_code("Good job !!!!")
 ```
 
