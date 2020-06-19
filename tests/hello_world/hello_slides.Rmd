@@ -13,6 +13,16 @@ description: >
 ---
 
 
+```{r learnr, include=TRUE, eval=FALSE, echo=FALSE}
+# WARNING: Currently you need to install learnr from commit "bd62765" which correspond to PR #310 (from Zoë Wilkinson Saldaña). 
+# Any attempt to try installation from another branch is expected to fail. 
+
+devtools::install_github(repo="rstudio/learnr", ref = "bd62765", force = FALSE)
+
+# You will also need the gradethis library from github
+devtools::install_github("rstudio-education/gradethis", ref="c19a00ae")
+```
+
 ```{r, include=FALSE}
 # Starting an exercice
 # First you need to import the learnr package. If you don't, exercice snippets won't turn into nice javascript form. 
@@ -27,11 +37,11 @@ tutorial_options(exercise.checker = gradethis::grade_learnr, exercise.completion
 
 **Exercice:** go to /tmp directory and call pwd command.
 
-```{sh grade_sh, exercise.engine="sh", exercise=TRUE, exercise.cap = "Bash exo 1", exercise.diagnostics=TRUE}
+```{sh, grade_sh, exercise.engine="sh", exercise=TRUE, exercise.cap = "Bash exo 1", exercise.diagnostics=TRUE, exercise.eval=FALSE}
 
 ```
 
-```{sh grade_sh-solution}
+```{sh, grade_sh-solution}
 cd /tmp
 pwd
 ```
@@ -44,17 +54,17 @@ grade_code("Good job !!!!")
 
 **Question:** Assign 10 to a variable named x and print(x)
 
-```{r r_exo_1,  exercise=TRUE, exercise.cap = "R exo 1"}
+```{r, r_exo_1, exercise.engine="r", exercise=TRUE, exercise.cap = "R exo 1"}
 
 ```
 
 
-```{r r_exo_1-solution}
+```{r, r_exo_1-solution}
 x <- 10
 print(x)
 ```
 
-```{r r_exo_1-check}
+```{r, r_exo_1-check}
 grade_code("You are mastering R !")
 ```
 
@@ -62,16 +72,16 @@ grade_code("You are mastering R !")
 
 Concatenate "Hello" and " world" and print the result
 
-```{python python_exo_1,  exercise.engine="python", exercise=TRUE, exercise.cap = "R exo 1"}
+```{python, python_exo_1,  exercise.engine="python", exercise=TRUE, exercise.cap = "Python exo 1", exercise.eval=FALSE}
 
 ```
 
 
-```{python python_exo_1-solution}
+```{python, python_exo_1-solution}
 print("Hello" + " world")
 ```
 
-```{python python_exo_1-check}
+```{python, python_exo_1-check}
 grade_code("Astonishing !")
 ```
 
